@@ -43,7 +43,7 @@ const reactionSchema = new Schema(
             required: true,
             maxlength: 280,
         },
-        usernmae:{
+        username:{
             type: String,
             required: true,
         },
@@ -62,6 +62,7 @@ const reactionSchema = new Schema(
 
         },
         id: false,
+        _id: false,
     }
 )
 
