@@ -15,6 +15,23 @@ const userSchema = new Schema(
             unique: true,
             match: [/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/],
         },
+        thoughts: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }],
+        friends:[{
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }]
     
     }
 )
+
+
+userSchema.virtual('friendCount').get(() => {
+    return this.friends.length
+})
+
+const User = model('User', userSchema)
+
+module.exports(User)
