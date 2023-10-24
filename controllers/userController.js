@@ -29,7 +29,7 @@ module.exports = {
       });
     } catch (error) {}
   },
-  async updateThought(req, res) {
+  async updateUser(req, res) {
     try {
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
@@ -39,3 +39,14 @@ module.exports = {
     } catch (eror) {}
   },
 };
+
+
+//Add Delete
+
+
+
+// /api/users/:userId/friends/:friendId
+
+// POST to add a new friend to a user's friend list
+
+// DELETE to remove a friend from a user's friend list
