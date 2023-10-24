@@ -8,17 +8,20 @@ module.exports = {
     } catch (error) {}
   },
   async getUser(req, res) {
+    console.log("GET USER!", req.params.userId)
     try {
-      const user = await User.findOne({ _id: req.params.thoughtId }).select("-__v");
+      const user = await User.findOne({ _id: req.params.userId }).select("-__v");
 
       if (!user) {
         res.status(404).json({
-          message: "No Thought ID Found",
+          message: "No User ID Found",
         });
       }
 
       res.json(user);
-    } catch (error) {}
+    } catch (error) {
+        res.json({ error: error.message });
+    }
   },
   async createUser(req, res) {
     try {
