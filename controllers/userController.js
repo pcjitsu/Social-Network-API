@@ -24,13 +24,14 @@ module.exports = {
     }
   },
   async createUser(req, res) {
-    try {
+    console.log(req.body)
+    // try {
       const user = await User.create(req.body);
       res.json({
         message: "User Created",
         thought: user,
       });
-    } catch (error) {}
+    // } catch (error) {}
   },
   async updateUser(req, res) {
     try {
