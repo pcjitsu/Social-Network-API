@@ -5,7 +5,8 @@ module.exports = {
     try {
       const thoughts = await Thought.find();
       res.json(thoughts);
-    } catch (error) {}
+    } catch (error) {console.log(err);
+      res.status(500).json(err);}
   },
   async getThought(req, res) {
     try {
@@ -27,7 +28,10 @@ module.exports = {
         message: "Thought Created",
         thought: thought,
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(err);
+      res.status(500).json(err);
+    }
   },
   async updateThought(req, res) {
     try {
@@ -36,7 +40,10 @@ module.exports = {
         { $set: req.body },
         { runValidators: true, new: true }
       );
-    } catch (eror) {}
+    } catch (eror) {
+      console.log(err);
+      res.status(500).json(err);
+    }
   },
 };
 
