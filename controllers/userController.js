@@ -41,6 +41,14 @@ module.exports = {
       );
     } catch (eror) {}
   },
+  async DeleteUser(req, res) {
+    try {
+      const user = await User.findOneAndDelete(
+        { _id: req.params.userId },
+        { $set: req.body },
+      );
+    } catch (eror) {}
+  },
 };
 
 
