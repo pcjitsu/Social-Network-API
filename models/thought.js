@@ -13,7 +13,7 @@ const thoughtSchema = new Schema(
                 new Date().toLocaleString()
             },
         },
-        usernmae:{
+        username:{
             type: String,
             required: true,
         },

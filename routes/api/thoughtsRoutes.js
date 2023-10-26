@@ -9,7 +9,7 @@ const {
 //   deleteReaction,
 } = require('../controllers/thought-controller');
 
-//TODO: Delte and Recations
+//TODO: Delte and Reactions
 
 // /api/thoughts
 router.route('/')
