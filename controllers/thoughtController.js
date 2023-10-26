@@ -40,7 +40,7 @@ module.exports = {
         { $set: req.body },
         { runValidators: true, new: true }
       );
-    } catch (eror) {
+    } catch (error) {
       console.log(err);
       res.status(500).json(err);
     }
