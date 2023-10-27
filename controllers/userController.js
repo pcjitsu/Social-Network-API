@@ -42,7 +42,7 @@ module.exports = {
       );
     } catch (eror) {}
   },
-  async DeleteUser(req, res) {
+  async deleteUser(req, res) {
     try {
       const user = await User.findOneAndDelete(
         { _id: req.params.userId })
