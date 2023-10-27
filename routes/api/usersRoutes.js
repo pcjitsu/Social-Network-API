@@ -20,7 +20,7 @@ router.route('/')
 router.route('/:userId')
   .get(getUser)
   .put(updateUser)
-  // .delete(deleteUser);
+  .delete(DeleteUser);
 
 
   //TODO: Finish this in Controller
