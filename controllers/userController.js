@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const { User } = require('../models/user');
 
 module.exports = {
   async getUsers(req, res) {
@@ -24,15 +24,14 @@ module.exports = {
     }
   },
   async createUser(req, res) {
-    console.log(req.body)
-    // try {
-      const user = await User.create(req.body);
-      res.json({
-        message: "User Created",
-        thought: user,
-      });
-    // } catch (error) {}
-  },
+    try {
+     const dbUserData = await User.create(req.body);
+     res.json(dbUserData);
+    } catch (err) {
+     console.log(err);
+     res.status(500).json(err);
+    }
+   }, 
   async updateUser(req, res) {
     try {
       const user = await User.findOneAndUpdate(
